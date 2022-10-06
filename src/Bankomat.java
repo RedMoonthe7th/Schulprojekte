@@ -9,7 +9,8 @@ public class Bankomat
         boolean isFinished = false;
         double balance = 0;
 
-        while(isFinished == false) {
+        while(isFinished == false)
+        {
             System.out.println("1. Einzahlen" + "\n" + "2. Auszahlen" + "\n" + "3. Kontostand" + "\n" + "4. Beenden");
             Scanner scanner = new Scanner(System.in);
             int selection = scanner.nextInt();
