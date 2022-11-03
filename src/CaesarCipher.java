@@ -29,7 +29,7 @@ public class CaesarCipher
                     System.out.println("Please enter the Key");
                     key = input.nextInt();
                     System.out.println("Please enter the Message");
-                    messageToDecrypt = input.toString();
+                    messageToDecrypt = input.next();
                     String decryptedMessage = decrypt(key, messageToDecrypt);
                     System.out.println("The decrypted Message is:" + "\n" + decryptedMessage);
                     break;
@@ -46,7 +46,20 @@ public class CaesarCipher
         for(int i = 0; i < inputMessage.length; i++)
         {
             int letter = inputMessage[i] + key;
-            encryptedResult += Character.toString(letter);
+            if(letter > 122)
+            {
+                letter = 96 + key;
+                encryptedResult += Character.toString(letter);
+            }
+            else if (letter > 90 && letter < 97)
+            {
+                letter = 64 + key;
+                encryptedResult += Character.toString(letter);
+            }
+            else
+            {
+                encryptedResult += Character.toString(letter);
+            }
         }
         return encryptedResult;
     }
@@ -57,7 +70,20 @@ public class CaesarCipher
         for(int i = 0; i < inputMessage.length; i++)
         {
             int letter = inputMessage[i] + key;
-            decryptedResult += Character.toString(letter);
+            if(letter > 122)
+            {
+                letter = 96 + key;
+                decryptedResult += Character.toString(letter);
+            }
+            else if (letter > 90 && letter < 97)
+            {
+                letter = 64 + key;
+                decryptedResult += Character.toString(letter);
+            }
+            else
+            {
+                decryptedResult += Character.toString(letter);
+            }
         }
         return decryptedResult;
     }
