@@ -6,13 +6,18 @@ public class Taschenrechner
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        char selection = input.next().charAt(0);
+
         int firstNumber;
         int secondNumber;
         int result;
+        boolean isFinished = false;
 
+        while (isFinished == false)
+        {
+        System.out.println("Do you want to Add(a), Subtract(s), Multiply(m), Divide(d) or Exit(x)");
+        char selection = input.next().charAt(0);
         switch (selection) {
-            case 'p':
+            case 'a':
                 System.out.println("What is the first Number?");
                 firstNumber = input.nextInt();
                 System.out.println("What is the second Number?");
@@ -20,7 +25,7 @@ public class Taschenrechner
                 result = firstNumber + secondNumber;
                 System.out.println("The Result is " + result);
                 break;
-            case 'm':
+            case 's':
                 System.out.println("What is the first Number?");
                 firstNumber = input.nextInt();
                 System.out.println("What is the second Number?");
@@ -29,7 +34,7 @@ public class Taschenrechner
                 System.out.println("The Result is " + result);
                 break;
 
-            case 'x':
+            case 'm':
                 System.out.println("What is the first Number?");
                 firstNumber = input.nextInt();
                 System.out.println("What is the second Number?");
@@ -46,7 +51,10 @@ public class Taschenrechner
                 result = firstNumber / secondNumber;
                 System.out.println("The Result is " + result);
                 break;
-
+            case 'x':
+                isFinished = true;
+                break;
+        }
         }
     }
 }
