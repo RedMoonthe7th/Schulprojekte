@@ -37,11 +37,13 @@ public class StringHelper
                     System.out.println("Please enter the Message");
                     messageToCountLetters = input.next();
                     String countedMessage = countLetters(letter, messageToCountLetters);
+
                     break;
                 case 'r':
                     System.out.println("Please enter the Message you wish to be reversed");
                     messageToReverse = input.next();
                     String reverseMessage = reversingMessage(messageToReverse);
+                    System.out.println(reverseMessage);
                     break;
                 case 'a':
                     break;
