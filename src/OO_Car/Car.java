@@ -11,6 +11,12 @@ public class Car
     public String brand;
     public String color;
 
+    public Car(int fuelConsumption, String brand, String serialNumber)
+    {
+        this.fuelConsumption = fuelConsumption;
+        this.brand = brand;
+        this.serialNumber = serialNumber;
+    }
     public void drive()
     {
         this.actualFuelAmount = this.actualFuelAmount - fuelConsumption;
@@ -25,7 +31,7 @@ public class Car
 
         if (this.actualFuelAmount > originalFuelAmount * 0.1)
         {
-            System.out.println("SuperBoostMode activated");
+            System.out.println("I am Speed");
         }
         else
         {
