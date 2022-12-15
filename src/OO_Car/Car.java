@@ -4,12 +4,12 @@ public class Car
 {
     //Gedächtnisvariablen
 
-    public int fuelConsumption;
-    public int originalFuelAmount;
-    public int actualFuelAmount;
-    public String serialNumber;
-    public String brand;
-    public String color;
+    private int fuelConsumption;
+    private int originalFuelAmount;
+    private int actualFuelAmount;
+    private String serialNumber;
+    private String brand;
+    private String color;
 
     public Car(int fuelConsumption, String brand, String serialNumber)
     {
@@ -17,6 +17,8 @@ public class Car
         this.brand = brand;
         this.serialNumber = serialNumber;
     }
+
+//Funktionen
     public void drive()
     {
         this.actualFuelAmount = this.actualFuelAmount - fuelConsumption;
@@ -24,6 +26,7 @@ public class Car
     }
     public void brake()
     {
+
         System.out.println("I brake now. No Brumm Brumm");
     }
     public void superBoost()
@@ -51,4 +54,33 @@ public class Car
         System.out.println("The remaining Range is " + remainingRange);
     }
 
+//Setter
+
+    public void setActualFuelAmount(int actualFuelAmount) {
+
+        this.actualFuelAmount = actualFuelAmount;
+    }
+
+    public void setColor(String color) {
+
+        this.color = color;
+    }
+
+    public void setOriginalFuelAmount(int originalFuelAmount) {
+        this.originalFuelAmount = originalFuelAmount;
+    }
+
+// Getter
+
+    public int getActualFuelAmount() {
+        return actualFuelAmount;
+    }
+
+    public int getOriginalFuelAmount() {
+        return originalFuelAmount;
+    }
+
+    public String getColor() {
+        return color;
+    }
 }
