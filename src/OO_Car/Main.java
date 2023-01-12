@@ -21,7 +21,9 @@ public class Main
         c3.setOriginalFuelAmount(40);
         c3.setActualFuelAmount(34);
 
-        c1.drive();
+        Engine e1 = new Engine(140, Engine.TYPE.DIESEL);
+
+        c1.drive(6);
         c1.superBoost();
         c1.honk(3);
         c1.brake();
