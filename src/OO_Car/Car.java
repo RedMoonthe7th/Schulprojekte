@@ -6,43 +6,26 @@ public class Car
 
     private Engine engine;
     private int fuelConsumption;
-    private int originalFuelAmount;
-    private int actualFuelAmount;
+
     private String serialNumber;
     private String brand;
     private String color;
 
-    public Car( int fuelConsumption, String brand, String serialNumber, Engine engine)
+    public Car( String brand, String serialNumber, Engine engine)
     {
-        this.engine = engine;
-        this.fuelConsumption = fuelConsumption;
         this.brand = brand;
         this.serialNumber = serialNumber;
+        this.engine = engine;
     }
 
 //Funktionen
-    public void drive(int speed)
-    {
-        this.actualFuelAmount = this.actualFuelAmount - fuelConsumption;
-        System.out.println("I am driving. Brumm Brumm");
-    }
+
     public void brake()
     {
 
         System.out.println("I brake now. No Brumm Brumm");
     }
-    public void superBoost()
-    {
 
-        if (this.actualFuelAmount > originalFuelAmount * 0.1)
-        {
-            System.out.println("I am Speed");
-        }
-        else
-        {
-            System.out.println("Not enough Fuel to SpuperBoost");
-        }
-    }
     public void honk(int amountOfHonks)
     {
         for (int i = 0; i < amountOfHonks; i++)
@@ -50,20 +33,14 @@ public class Car
             System.out.println("Honk");
         }
     }
-    public void getRemainingRange()
-    {
-        int remainingRange = this.actualFuelAmount / this.fuelConsumption;
-        System.out.println("The remaining Range is " + remainingRange);
-    }
+
+
 
 //Setter
 
     public void setEngine(Engine engine){
-        this.engine = engine;
-    }
-    public void setActualFuelAmount(int actualFuelAmount) {
 
-        this.actualFuelAmount = actualFuelAmount;
+        this.engine = engine;
     }
 
     public void setColor(String color) {
@@ -71,22 +48,12 @@ public class Car
         this.color = color;
     }
 
-    public void setOriginalFuelAmount(int originalFuelAmount) {
-        this.originalFuelAmount = originalFuelAmount;
-    }
 
 // Getter
-    public int getEngine() {
-        return engine;
-    }
-    public int getActualFuelAmount() {
-        return actualFuelAmount;
-    }
-    public int getOriginalFuelAmount() {
-        return originalFuelAmount;
-    }
 
     public String getColor() {
         return color;
     }
+    public Engine getEngine() {return engine;}
 }
+
