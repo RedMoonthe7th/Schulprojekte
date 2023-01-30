@@ -6,7 +6,6 @@ public class Car
 
     private Engine engine;
     private int fuelConsumption;
-
     private String serialNumber;
     private String brand;
     private String color;
@@ -22,7 +21,6 @@ public class Car
 
     public void brake()
     {
-
         System.out.println("I brake now. No Brumm Brumm");
     }
 
