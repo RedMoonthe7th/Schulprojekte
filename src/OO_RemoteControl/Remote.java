@@ -21,11 +21,18 @@ public class Remote {
         System.out.println("The remote still has " + result +"% power left");
     }
     public void turnOn(){
-        firstBattery.getPower() = firstBattery.getPower() - 5;
-
+        firstBattery.setConnected(true);
+        firstBattery.setPower(firstBattery.getPower() - 5);
+        System.out.println("First Battery: Verbraucher angeschlossen");
+        secondBattery.setConnected(true);
+        secondBattery.setPower(secondBattery.getPower() - 5);
+        System.out.println("Second Battery: Verbraucher angeschlossen");
     }
     public void turnOff(){
-
+        firstBattery.setConnected(false);
+        System.out.println("First Battery: Kein Verbraucher angeschlossen");
+        secondBattery.setConnected(false);
+        System.out.println("Second Battery: Kein Verbraucher angeschlossen");
     }
 
     //Getter
