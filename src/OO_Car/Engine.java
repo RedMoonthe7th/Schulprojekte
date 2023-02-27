@@ -25,7 +25,6 @@ public class Engine {
 
     public void superBoost()
     {
-
         if (this.actualFuelAmount > originalFuelAmount * 0.1)
         {
             System.out.println("I am Speed");
