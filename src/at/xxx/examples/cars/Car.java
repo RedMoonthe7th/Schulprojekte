@@ -1,4 +1,5 @@
 package at.xxx.examples.cars;
+import java.util.Scanner;
 
 public class Car {
     //Gedächtnisvariablen
@@ -6,7 +7,7 @@ public class Car {
     private Engine engine;
     private Seller seller;
     private int maxSpeed;
-    private int baseConsumption;
+    private double baseConsumption;
     private double basePrice;
     private String color;
 
@@ -20,10 +21,30 @@ public class Car {
     }
 
     // Methods
-    public double price()
+    public double getPrice()
     {
-        double actualPrice = this.basePrice - this.basePrice * (this.seller.getDiscount() / 100);
+        double actualPrice = this.basePrice - this.basePrice * (this.seller.getDiscount() / 100.0);
         return actualPrice;
+    }
+    public double getConsumption()
+    {
+        Scanner input = new Scanner(System.in);
+        int distance = 0;
+        double consumptionOverDistance = 0.0;
+        System.out.println("Geben Sie die zu fahrende Strecke ein:");
+        distance = input.nextInt();
+        for(int i = 0; i < distance; i++)
+        {
+            if (i + 1 > 50000)
+            {
+                consumptionOverDistance += this.baseConsumption * 1.098;
+            }
+            else
+            {
+                consumptionOverDistance += this.baseConsumption;
+            }
+        }
+        return consumptionOverDistance;
     }
     // Setter
     public void setEngine(Engine engine) {
@@ -63,7 +84,7 @@ public class Car {
         return maxSpeed;
     }
 
-    public int getBaseConsumption() {
+    public double getBaseConsumption() {
         return baseConsumption;
     }
 
