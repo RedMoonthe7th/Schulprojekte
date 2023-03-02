@@ -18,7 +18,15 @@ public class glowElement {
     // Funktionen
     public void turnOn()
     {
-        this.setStatus(true);
+        if(this.status = false)
+        {
+            this.setStatus(true);
+            this.consumption = this.consumption + 5;
+        }
+        else
+        {
+            System.out.println("Mein Name ist " + this.name + ". Ich bin bereits eingeschaltet");
+        }
     }
 
     //Getter und Setter
