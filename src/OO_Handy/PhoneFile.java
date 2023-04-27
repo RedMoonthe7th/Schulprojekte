@@ -38,7 +38,5 @@ public class PhoneFile
     public double getSize() {
         return size;
     }
-    public void setSize(double size) {
-        this.size = size;
-    }
+    public void setSize(double size) {this.size = size;}
 }

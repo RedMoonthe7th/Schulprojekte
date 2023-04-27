@@ -8,6 +8,8 @@ public class Main
         PhoneFile phonefile1 = new PhoneFile("beach", ".jpg", 8);
 
         phonefile1.getInfo();
+        sim1.getInfo();
+        sim1.doCall();
 
     }
 }

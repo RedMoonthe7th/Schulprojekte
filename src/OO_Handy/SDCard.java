@@ -6,30 +6,34 @@ public class SDCard
 {
     //Variables
     private double capacity;
-    private double filledCapacity;
-    private List<PhoneFile> phoneFiles;
+    private List<PhoneFile> files;
 
     //Constructor
     public SDCard(double capacity) {
         this.capacity = capacity;
+        this.files = new ArrayList<>();
     }
 
     //Functions
-    public void saveFile()
+    public void saveFile(PhoneFile file)
     {
         double placeholder = 0;
-        if (getCapacity() > getFilledCapacity() + placeholder)
+        if (getCapacity() > placeholder)
         {
-
+            files.add(file);
         }
         else
         {
-            System.out.println("Not enough capacity available.");
+            System.out.println("Not enough capacity available. Please delete something, before trying once again");
         }
     }
     public void getAllFiles()
     {
-        System.out.println(phoneFiles);
+        System.out.println(files);
+    }
+    public void getFreeSpace()
+    {
+
     }
 
     //Getter & Setter
@@ -40,17 +44,6 @@ public class SDCard
         this.capacity = capacity;
     }
 
-    public double getFilledCapacity() {
-        return filledCapacity;
-    }
-    public void setFilledCapacity(double filledCapacity) {
-        this.filledCapacity = filledCapacity;
-    }
-
-    public List<PhoneFile> getPhoneFiles() {
-        return phoneFiles;
-    }
-    public void setPhoneFiles(List<PhoneFile> phoneFiles) {
-        this.phoneFiles = phoneFiles;
-    }
+    public List<PhoneFile> getFiles() {return files;}
+    public void setFiles(List<PhoneFile> files) {this.files = files;}
 }
