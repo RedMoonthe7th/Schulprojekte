@@ -15,10 +15,9 @@ public class PhoneFile
     }
 
     //Functions
-    public void getInfo()
+    public String getInfo()
     {
-        System.out.println("File name: " + name + extension);
-        System.out.println("File size: " + size + " mb");
+        return this.name + this.extension + ": " + this.size + " mb";
     }
     // Getter & Setter
     public String getExtension() {

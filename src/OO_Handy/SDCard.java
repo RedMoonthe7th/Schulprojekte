@@ -31,9 +31,14 @@ public class SDCard
     {
         System.out.println(files);
     }
-    public void getFreeSpace()
+    public double getFreeSpace()
     {
-
+        int size = 0;
+        for(PhoneFile phoneFile : files)
+        {
+            size += phoneFile.getSize();
+        }
+        return capacity - size;
     }
 
     //Getter & Setter

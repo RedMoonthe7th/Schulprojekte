@@ -9,7 +9,7 @@ public class Main
 
         phonefile1.getInfo();
         sim1.getInfo();
-        sim1.doCall();
+        sim1.doCall("363737242");
 
     }
 }

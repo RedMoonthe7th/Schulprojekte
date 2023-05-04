@@ -13,8 +13,9 @@ public class SIMCard
     }
 
     //Functions
-    public void doCall()
+    public void doCall( String number)
     {
+        System.out.println("Calling " + number);
         System.out.println("Hello? Hello, hello? Welcome to your new summer job at...");
     }
     public void getInfo()
